@@ -1,3 +1,200 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+body {
+  /* background: #061732; */
+  background: #040411;
+  color: #fff;
+  --sb-track-color: #232e33;
+  --sb-thumb-color: #e92b44;
+  --sb-size: 14px;
+}
+
+/* SELECTED TEXT COLOR */
+::selection {
+  background-color: #e92b44; /* Background color for the selected text */
+  color: #ffffff; /* Text color for the selected text */
+}
+
+/* For Mozilla Firefox */
+::-moz-selection {
+  background-color: #e92b44;
+  color: #ffffff;
+}
+
+/* SCROLLBAR */
+
+.scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+}
+
+body::-webkit-scrollbar,
+.scrollable::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track,
+.scrollable::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb,
+.scrollable::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body,
+  .scrollable {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+/* FORM STYLES */
+.basic_input {
+  background: #040411;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #2a2a40;
+}
+
+/* TEXT STYLES */
+.stroke-text {
+  color: transparent;
+  -webkit-text-stroke: 1px #fff; /* width and color */
+}
+
+.cssClass li {
+  list-style-type: none;
+  list-style-position: inside;
+  text-indent: -1em;
+  padding-left: 1em;
+}
+
+/* FONT STYLES */
+@layer components {
+  .headline1 {
+    @apply font-spaceBold text-[24px] leading-[15px] sm:text-[28px] sm:leading-[20px] md:text-[42px] md:leading-[38px] lg:text-[42px] lg:leading-[35px] xl:text-[70px] xl:leading-[55px];
+  }
+  .headline2 {
+    @apply font-spaceBold text-[20px] leading-[18px] sm:text-[24px] sm:leading-[22px] md:text-[40px] md:leading-[38px] lg:text-[52px] lg:leading-[45px] xl:text-[52px] xl:leading-[45px];
+  }
+  .headline3 {
+    @apply font-spaceBold text-[18px] leading-[35px] sm:text-[20px] sm:leading-[27px] md:text-[32px] md:leading-[30px] lg:text-[42px] lg:leading-[40px] xl:text-[48px] xl:leading-[40px];
+  }
+  .headline4 {
+    @apply font-spaceBold text-[20px] leading-[18px] sm:text-[20px] sm:leading-[18px] md:text-[20px] md:leading-[18px] lg:text-[24px] lg:leading-[22px] xl:text-[28px] xl:leading-[25px];
+  }
+  .copy_regular {
+    @apply font-spaceRegular text-[14px] leading-[16px] sm:text-[16px] sm:leading-[18px] md:text-[18px] md:leading-[20px] lg:text-[18px] lg:leading-[20px] xl:text-[18px] xl:leading-[25px];
+  }
+  .meta {
+    @apply font-spaceSemiBold text-[12px] leading-[14px] sm:text-[14px] sm:leading-[16px] md:text-[16px] md:leading-[18px] lg:text-[18px] lg:leading-[20px] xl:text-[18px] xl:leading-[18px];
+  }
+}
+
+/* CONTENT STYLES */
+.content-body {
+  @apply mt-12;
+}
+
+@layer base {
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+}
+
+/* TRADINGVIEW WIDGET */
+.tickerTape-N_kypjt9 {
+  background-color: red !important;
+  color: red !important;
+}
+
+/* SPECIAL BORDER STYLES */
+.gradient-border-top-left {
+  border: 4px solid transparent; /* Defines a solid border first */
+  border-radius: 40px; /* Rounded corners */
+  padding: 10px;
+  background-image: radial-gradient(circle at top left, #e92b44, transparent 50%);
+  background-origin: border-box; /* Ensures the background extends under the border */
+  background-clip: padding-box, border-box; /* Clips background to the padding and border box */
+}
+.gradient-border-bottom-right {
+  border: 4px solid transparent; /* Defines a solid border first */
+  border-radius: 40px; /* Rounded corners */
+  padding: 10px;
+  background-image: radial-gradient(circle at bottom right, #e92b44, transparent 50%);
+  background-origin: border-box; /* Ensures the background extends under the border */
+  background-clip: padding-box, border-box; /* Clips background to the padding and border box */
+}
+
+/* SWIPER STYLES */
+.swiper-slide {
+  height: auto !important;
+}
+
+.swiper-pagination-bullet {
+  background: #e2b744 !important;
+}
+
+/* REACT PLAYER */
+.player-wrapper {
+  width: auto;
+  height: auto;
+}
+.react-player {
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.react-player > div {
+  position: absolute;
+  top: 0;
+}
+
+/* INSTAGRAM EMBED */
+.instagram-media {
+  background: #fff;
+  border: 0;
+  border-radius: 3px;
+  box-shadow:
+    0 0 1px 0 rgba(0, 0, 0, 0.5),
+    0 1px 10px 0 rgba(0, 0, 0, 0.15);
+  margin: 1px;
+  max-width: 540px;
+  min-width: 326px;
+  padding: 0;
+  width: 99.375%;
+  width: -webkit-calc(100% - 2px);
+  width: calc(100% - 2px);
+}
