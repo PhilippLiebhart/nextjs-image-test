@@ -50,7 +50,7 @@ export async function getStaticProps() {
     props: {
       teamMembers,
     },
-    revaidate: 10,
+    revalidate: 10, // In seconds
   };
 }
 
