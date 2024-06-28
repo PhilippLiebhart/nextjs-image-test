@@ -8,7 +8,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <Link href='/'>Home</Link>
         <Link href='/sub'>Sub</Link>
       </div>
-      {children}
+      <div className='flex-grow flex flex-col border-0 border-indigo-500 '>{children}</div>
     </div>
   );
 };
